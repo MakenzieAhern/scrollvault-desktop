@@ -1,0 +1,72 @@
+plugins {
+    id 'application'
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.0.14'
+    id 'jacoco'
+}
+
+group = 'com.vsas'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories { mavenCentral() }
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.11.0'
+    implementation 'org.mindrot:jbcrypt:0.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.3'
+}
+
+application { mainClass = 'com.vsas.Launcher' }
+
+javafx {
+    version = '21.0.2'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty 'file.encoding', 'UTF-8'
+    systemProperty 'scrollvault.dataDir', layout.buildDirectory.dir('test-data').get().asFile.absolutePath
+    systemProperty 'scrollvault.preferencesNode', 'com.scrollvault.tests'
+    if (project.hasProperty('captureScreenshots')) {
+        systemProperty 'scrollvault.captureScreenshots', 'true'
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(JavaExec).configureEach {
+    systemProperty 'file.encoding', 'UTF-8'
+    systemProperty 'scrollvault.dataDir', System.getProperty('scrollvault.dataDir', 'data')
+}
+
+tasks.register('seedDemo', JavaExec) {
+    group = 'application'
+    description = 'Create synthetic demo accounts and files in an empty data directory.'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.vsas.DemoData'
+}
+
+jacoco {
+    toolVersion = '0.8.11'
+}
+
+tasks.test {
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}

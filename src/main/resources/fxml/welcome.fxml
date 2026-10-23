@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.vsas.controllers.WelcomeController" styleClass="login-root, dark">
+    <top>
+    <StackPane>
+        <VBox spacing="6" styleClass="glass-card, square">
+            <padding>
+                <Insets top="10" right="10" left="10"/>
+            </padding>
+            <HBox alignment="CENTER" spacing="8">
+                <Label text="SCROLLVAULT DESKTOP" styleClass="card-title"
+                       style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 28px;" />
+            </HBox>
+            <HBox alignment="CENTER" spacing="4">
+                <Label text="Your local library for documents and images" styleClass="card-title"
+                       style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 24px;" />
+            </HBox>
+        </VBox>
+    </StackPane>
+    </top>
+    <center>
+        <StackPane>
+            <Pane styleClass="login-bg" />
+            <Pane fx:id="blobLayer" />
+            <Pane fx:id="particlesLayer" />
+            <VBox alignment="CENTER" spacing="20">
+                <VBox spacing="16" styleClass="glass-card, square" maxWidth="580" alignment="CENTER">
+                    <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+                    <Label text="Welcome" styleClass="card-title" style="-fx-font-size: 28px;" />
+                    <Button fx:id="getStartedBtn" text="Get Started" onAction="#onGetStarted" prefHeight="44" styleClass="cta-btn" />
+                    <Button fx:id="aboutBtn" text="About" onAction="#onAboutAction" prefHeight="44" styleClass="cta-btn" />
+                    <Button text="Contact Us" onAction="#onContactAction" prefHeight="44" styleClass="cta-btn" />
+
+                </VBox>
+            </VBox>
+        </StackPane>
+    </center>
+    <bottom>
+        <BorderPane>
+            <left>
+                <HBox alignment="CENTER_LEFT" spacing="24">
+                    <padding><Insets top="10" bottom="10" left="10"/></padding>
+                    <Label text="v1.0.0" style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 18px;" />
+                    <Label text="Built with JavaFX &amp; Gradle" style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 18px;" />
+                </HBox>
+            </left>
+            <right>
+                <HBox alignment="CENTER_RIGHT">
+                    <padding><Insets top="10" bottom="10" right="10"/></padding>
+                    <Label fx:id="dateTimeLabel" style="-fx-text-fill: black; -fx-font-weight: 700; -fx-font-size: 16px;" />
+                </HBox>
+            </right>
+        </BorderPane>
+    </bottom>
+</BorderPane>

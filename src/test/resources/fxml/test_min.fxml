@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <Pane fx:id="blobLayer" prefHeight="100" prefWidth="200" />
+    <Pane fx:id="particlesLayer" prefHeight="100" prefWidth="200" />
+    <Label text="Test" />
+  </children>
+</VBox>

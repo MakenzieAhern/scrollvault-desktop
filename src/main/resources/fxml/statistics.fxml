@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:id="root" fx:controller="com.vsas.controllers.StatisticsController" styleClass="login-root, dark">
+    <top>
+        <BorderPane>
+            <left>
+                <VBox spacing="6">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <padding><Insets top="10" left="10"/></padding>
+                        <Label text="ScrollVault Desktop" styleClass="hero-title" />
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT">
+                        <padding><Insets left="10" bottom="10"/></padding>
+                        <Label text="System Statistics" styleClass="card-title" />
+                    </HBox>
+                </VBox>
+            </left>
+            <right>
+                <HBox />
+            </right>
+        </BorderPane>
+    </top>
+    <center>
+        <StackPane>
+            <Pane fx:id="blobLayer" />
+            <Pane fx:id="particlesLayer" />
+            <VBox alignment="CENTER" spacing="16" StackPane.alignment="CENTER">
+                <padding><Insets top="20" bottom="40" left="40" right="40"/></padding>
+
+                <!-- Summary Cards -->
+                <HBox spacing="20" alignment="CENTER">
+                    <VBox spacing="8" styleClass="glass-card, square" prefWidth="200" prefHeight="120" alignment="CENTER">
+                        <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+                        <Label text="Total Scrolls" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+                        <Label fx:id="lblTotalScrolls" text="0" style="-fx-font-size: 40px; -fx-font-weight: bold; -fx-text-fill: #E91E63;" />
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="glass-card, square" prefWidth="200" prefHeight="120" alignment="CENTER">
+                        <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+                        <Label text="Total Downloads" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+                        <Label fx:id="lblTotalDownloads" text="0" style="-fx-font-size: 40px; -fx-font-weight: bold; -fx-text-fill: #4CAF50;" />
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="glass-card, square" prefWidth="200" prefHeight="120" alignment="CENTER">
+                        <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+                        <Label text="Total Uploads" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+                        <Label fx:id="lblTotalUploads" text="0" style="-fx-font-size: 40px; -fx-font-weight: bold; -fx-text-fill: #FF9800;" />
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="glass-card, square" prefWidth="200" prefHeight="120" alignment="CENTER">
+                        <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+                        <Label text="Total Views" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+                        <Label fx:id="lblTotalViews" text="0" style="-fx-font-size: 40px; -fx-font-weight: bold; -fx-text-fill: #9C27B0;" />
+                    </VBox>
+                </HBox>
+
+                <!-- Main Statistics Table -->
+                <VBox spacing="8" styleClass="glass-card, square" maxWidth="1100" prefWidth="1100">
+                    <padding><Insets top="16" right="12" bottom="16" left="12"/></padding>
+                    <Label text="Scroll Statistics" styleClass="card-title" />
+
+                    <!-- Filter Bar -->
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <TextField fx:id="txtFilterScrollId" promptText="Filter by Scroll ID" prefWidth="150" />
+                        <TextField fx:id="txtFilterUploader" promptText="Filter by Uploader" prefWidth="150" />
+                        <DatePicker fx:id="dpFilterFrom" promptText="From Date" prefWidth="130" />
+                        <DatePicker fx:id="dpFilterTo" promptText="To Date" prefWidth="130" />
+                        <Button text="Apply Filters" onAction="#onApplyFilters" prefWidth="100" />
+                        <Button text="Clear" onAction="#onClearFilters" prefWidth="80" />
+                    </HBox>
+
+                    <!-- Statistics Table -->
+                    <TableView fx:id="tblScrollStats" prefHeight="450">
+                        <columns>
+                            <TableColumn fx:id="colScrollId" text="Scroll ID" prefWidth="100" />
+                            <TableColumn fx:id="colScrollName" text="Scroll Name" prefWidth="280" />
+                            <TableColumn fx:id="colScrollType" text="Type" prefWidth="100" />
+                            <TableColumn fx:id="colUploader" text="Uploader" prefWidth="150" />
+                            <TableColumn fx:id="colUploadDate" text="Upload Date" prefWidth="120" />
+                            <TableColumn fx:id="colDownloads" text="Downloads" prefWidth="100" />
+                            <TableColumn fx:id="colViews" text="Views" prefWidth="100" />
+                        </columns>
+                    </TableView>
+
+                    <Label fx:id="lblResultCount" text="Showing 0 scrolls" style="-fx-font-size: 12px; -fx-text-fill: #666;" />
+                </VBox>
+
+                <!-- Message Label -->
+                <Label fx:id="messageLabel" styleClass="banner-success" visible="false" managed="false" wrapText="true" />
+
+                <!-- Action Buttons -->
+                <HBox spacing="12" alignment="CENTER">
+                    <Button text="Refresh Statistics" onAction="#onRefresh" styleClass="cta-btn" prefHeight="44" prefWidth="200" />
+                    <Button text="Go Back" onAction="#onGoBack" styleClass="cta-btn" prefHeight="44" prefWidth="200" />
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+    <bottom>
+        <BorderPane>
+            <left>
+                <HBox alignment="CENTER_LEFT" spacing="24">
+                    <padding><Insets top="10" bottom="10" left="10"/></padding>
+                    <Label text="v1.0.0" style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 18px;" />
+                    <Label text="Built with JavaFX &amp; Gradle" style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 18px;" />
+                </HBox>
+            </left>
+            <right>
+                <HBox alignment="CENTER_RIGHT">
+                    <padding><Insets top="10" bottom="10" right="10"/></padding>
+                    <Label fx:id="dateTimeLabel" style="-fx-text-fill: black; -fx-font-weight: 700; -fx-font-size: 16px;" />
+                </HBox>
+            </right>
+        </BorderPane>
+    </bottom>
+</BorderPane>

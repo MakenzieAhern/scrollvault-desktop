@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="410" viewBox="0 0 1100 410">
+<rect width="1100" height="410" rx="20" fill="#f4f7fb"/>
+<g font-family="Arial,sans-serif" fill="#172c43">
+<text x="40" y="48" font-size="24" font-weight="700">ScrollVault Desktop · application flow</text>
+<g fill="#fff" stroke="#b9cadd" stroke-width="2">
+<rect x="40" y="95" width="280" height="195" rx="14"/>
+<rect x="410" y="95" width="280" height="195" rx="14"/>
+<rect x="780" y="95" width="280" height="195" rx="14"/>
+</g>
+<g font-size="20" font-weight="700"><text x="65" y="132">JavaFX interface</text><text x="435" y="132">Application services</text><text x="805" y="132">Local storage</text></g>
+<g font-size="17"><text x="65" y="176">FXML views + controllers</text><text x="65" y="210">Forms, filters, previews</text><text x="65" y="244">Session and role checks</text><text x="435" y="176">Authentication + BCrypt</text><text x="435" y="210">File lifecycle + ownership</text><text x="435" y="244">Usage statistics</text><text x="805" y="176">users.json</text><text x="805" y="210">scrolls.json</text><text x="805" y="244">files/ · uploaded contents</text></g>
+<g stroke="#3478a5" stroke-width="3" fill="none"><path d="M335 190h60m-10-8 10 8-10 8"/><path d="M705 190h60m-10-8 10 8-10 8"/></g>
+<text x="40" y="350" font-size="17">Single desktop process · JSON persistence · No server or database setup</text>
+<text x="40" y="380" font-size="15" fill="#50657a">JUnit + real FXML fixtures verify behavior; JaCoCo reports coverage; GitHub Actions repeats the build.</text>
+</g></svg>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.vsas.controllers.ContactController" styleClass="login-root, dark">
+    <top>
+    <StackPane>
+        <VBox spacing="6" styleClass="glass-card, square">
+            <padding>
+                <Insets top="10" right="10" left="10"/>
+            </padding>
+            <HBox alignment="CENTER" spacing="8">
+                <Label text="SCROLLVAULT DESKTOP" styleClass="card-title"
+                       style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 28px;" />
+            </HBox>
+            <HBox alignment="CENTER" spacing="4">
+                <Label text="Your local library for documents and images" styleClass="card-title"
+                       style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 24px;" />
+            </HBox>
+        </VBox>
+    </StackPane>
+    </top>
+    <center>
+        <StackPane>
+            <Pane styleClass="login-bg" />
+            <Pane fx:id="blobLayer" />
+            <Pane fx:id="particlesLayer" />
+            <VBox alignment="CENTER" spacing="16">
+                <GridPane hgap="8" vgap="12" maxWidth="800">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="16" prefWidth="16" maxWidth="16" halignment="LEFT" />
+                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints valignment="TOP" />
+                    </rowConstraints>
+                    <children>
+                        <!-- Intro row with empty bullet column -->
+                        <Label text="" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                        <Label wrapText="true" maxWidth="760" style="-fx-text-fill: black; -fx-font-size: 18px;" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                               text="Meet the team:" />
+
+                        <!-- Bullet rows -->
+                        <Label wrapText="true" maxWidth="760" style="-fx-text-fill: black; -fx-font-size: 18px;" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                               text="• Aditya Bahl - Project Owner, Developer" />
+
+                        <Label wrapText="true" maxWidth="760" style="-fx-text-fill: black; -fx-font-size: 18px;" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                               text="• Nicholas Huang Hong Shee - Scrum Master, Developer" />
+
+                        <Label wrapText="true" maxWidth="760" style="-fx-text-fill: black; -fx-font-size: 18px;" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                               text="• Lanfei Yan - Developer" />
+
+                        <Label wrapText="true" maxWidth="760" style="-fx-text-fill: black; -fx-font-size: 18px;" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                               text="• Yuchen Deng - Developer" />
+                    </children>
+                </GridPane>
+                <Button text="Go Back" onAction="#onGoBack" styleClass="cta-btn" prefHeight="44" />
+            </VBox>
+        </StackPane>
+    </center>
+    <bottom>
+        <BorderPane>
+            <left>
+                <HBox alignment="CENTER_LEFT" spacing="24">
+                    <padding><Insets top="10" bottom="10" left="10"/></padding>
+                    <Label text="v1.0.0" style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 18px;" />
+                    <Label text="Built with JavaFX &amp; Gradle" style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 18px;" />
+                </HBox>
+            </left>
+            <right>
+                <HBox alignment="CENTER_RIGHT">
+                    <padding><Insets top="10" bottom="10" right="10"/></padding>
+                    <Label fx:id="dateTimeLabel" style="-fx-text-fill: black; -fx-font-weight: 700; -fx-font-size: 16px;" />
+                </HBox>
+            </right>
+        </BorderPane>
+    </bottom>
+</BorderPane>

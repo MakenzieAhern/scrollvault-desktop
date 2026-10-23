@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.vsas.controllers.AboutController" styleClass="login-root, dark">
+    <top>
+    <StackPane>
+        <VBox spacing="6" styleClass="glass-card, square">
+            <padding>
+                <Insets top="10" right="10" left="10"/>
+            </padding>
+            <HBox alignment="CENTER" spacing="8">
+                <Label text="SCROLLVAULT DESKTOP" styleClass="card-title"
+                       style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 28px;" />
+            </HBox>
+            <HBox alignment="CENTER" spacing="4">
+                <Label text="Your local library for documents and images" styleClass="card-title"
+                       style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 24px;" />
+            </HBox>
+        </VBox>
+    </StackPane>
+    </top>
+    <center>
+        <StackPane>
+            <Pane styleClass="login-bg" />
+            <Pane fx:id="blobLayer" />
+            <Pane fx:id="particlesLayer" />
+            <VBox alignment="CENTER" spacing="16">
+                <GridPane hgap="8" vgap="12" maxWidth="800">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="16" prefWidth="16" maxWidth="16" halignment="LEFT" />
+                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints valignment="TOP" />
+                    </rowConstraints>
+                    <children>
+                        <!-- Intro row with empty bullet column -->
+                        <Label text="" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                        <Label wrapText="true" maxWidth="760" style="-fx-text-fill: black; -fx-font-size: 18px;" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                               text="ScrollVault Desktop is designed to provide a secure and user-friendly digital library experience. It allows users to register, log in, and interact with a repository of digital scrolls. Key features include:" />
+
+                        <!-- Bullet rows -->
+                        <Label wrapText="true" maxWidth="760" style="-fx-text-fill: black; -fx-font-size: 18px;" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                               text="• User Management - Secure registration, login, profile updates, guest access, and admin privileges with password hashing." />
+
+                        <Label wrapText="true" maxWidth="760" style="-fx-text-fill: black; -fx-font-size: 18px;" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                               text="• Digital Scroll Management - Users can upload, edit, and remove their own scrolls, each stored with unique IDs and metadata." />
+
+                        <Label wrapText="true" maxWidth="760" style="-fx-text-fill: black; -fx-font-size: 18px;" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                               text="• Scroll Seeker - Browse, preview, and download scrolls with advanced filtering options (by name, uploader, ID, or date)." />
+
+                        <Label wrapText="true" maxWidth="760" style="-fx-text-fill: black; -fx-font-size: 18px;" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                               text="• Interactive GUI - Intuitive JavaFX interface with a welcoming start page, navigation buttons, and clear user type display." />
+
+                        <Label wrapText="true" maxWidth="760" style="-fx-text-fill: black; -fx-font-size: 18px;" GridPane.rowIndex="5" GridPane.columnIndex="1"
+                               text="• Admin Tools - Admins can manage users, view system statistics, and maintain scroll records." />
+
+                        <Label wrapText="true" maxWidth="760" style="-fx-text-fill: black; -fx-font-size: 18px;" GridPane.rowIndex="6" GridPane.columnIndex="1"
+                               text="• Lightweight Storage - All data is stored in JSON files, eliminating the need for a complex database setup." />
+                    </children>
+                </GridPane>
+                <Button text="Go Back" onAction="#onGoBack" styleClass="cta-btn" prefHeight="44" />
+            </VBox>
+        </StackPane>
+    </center>
+    <bottom>
+        <BorderPane>
+            <left>
+                <HBox alignment="CENTER_LEFT" spacing="24">
+                    <padding><Insets top="10" bottom="10" left="10"/></padding>
+                    <Label text="v1.0.0" style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 18px;" />
+                    <Label text="Built with JavaFX &amp; Gradle" style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 18px;" />
+                </HBox>
+            </left>
+            <right>
+                <HBox alignment="CENTER_RIGHT">
+                    <padding><Insets top="10" bottom="10" right="10"/></padding>
+                    <Label fx:id="dateTimeLabel" style="-fx-text-fill: black; -fx-font-weight: 700; -fx-font-size: 16px;" />
+                </HBox>
+            </right>
+        </BorderPane>
+    </bottom>
+</BorderPane>

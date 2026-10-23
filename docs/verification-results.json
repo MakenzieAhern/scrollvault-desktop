@@ -1,0 +1,37 @@
+{
+  "verified_date": "2026-10-23",
+  "suite": "default clean build",
+  "environment": {
+    "os": "macOS Apple Silicon",
+    "java": "Microsoft OpenJDK 17.0.16",
+    "javafx": "21.0.2",
+    "gradle": "7.4.2"
+  },
+  "tests": {
+    "discovered": 185,
+    "passed": 184,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "skip_reason": "optional portfolio screenshot capture"
+  },
+  "coverage": {
+    "lines": {
+      "covered": 1188,
+      "total": 1677,
+      "percent": 70.84
+    },
+    "branches": {
+      "covered": 638,
+      "total": 1144,
+      "percent": 55.77
+    }
+  },
+  "optional_capture_run": {
+    "passed": 185,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "installed_launcher_smoke": "Running for 6 seconds without launch errors"
+}

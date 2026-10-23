@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.vsas.controllers.AddUserController" styleClass="login-root, dark">
+    <top>
+        <StackPane>
+            <VBox spacing="6" styleClass="glass-card, square">
+                <padding>
+                    <Insets top="10" right="10" left="10"/>
+                </padding>
+                <HBox alignment="CENTER" spacing="8">
+                    <Label text="SCROLLVAULT DESKTOP" styleClass="card-title"
+                           style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 28px;" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="4">
+                    <Label text="Your local library for documents and images" styleClass="card-title"
+                           style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 24px;" />
+                </HBox>
+            </VBox>
+        </StackPane>
+    </top>
+
+    <center>
+        <StackPane>
+            <Pane styleClass="login-bg" />
+            <Pane fx:id="blobLayer" />
+            <Pane fx:id="particlesLayer" />
+            <VBox alignment="CENTER" spacing="24">
+                <VBox spacing="16" styleClass="glass-card, square" maxWidth="700" alignment="CENTER">
+                    <padding><Insets top="28" right="28" bottom="28" left="28"/></padding>
+                    <HBox alignment="CENTER">
+                        <Label text="Add User" styleClass="card-title" style="-fx-font-size: 28px;" />
+                    </HBox>
+                    <GridPane hgap="10" vgap="12" alignment="CENTER_LEFT">
+                        <padding><Insets left="10"/></padding>
+                        <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" prefWidth="180"/>
+                            <ColumnConstraints halignment="LEFT" prefWidth="320" hgrow="NEVER"/>
+                        </columnConstraints>
+            <children>
+                            <HBox alignment="CENTER_RIGHT" spacing="2" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                                <Label text="Username" styleClass="form-label" />
+                                <Label text="*" style="-fx-text-fill: #b00020; -fx-font-weight: 800;" />
+                            </HBox>
+                            <TextField fx:id="usernameField" promptText="Enter Username" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="320"/>
+
+                            <HBox alignment="CENTER_RIGHT" spacing="2" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                                <Label text="Password" styleClass="form-label" />
+                                <Label text="*" style="-fx-text-fill: #b00020; -fx-font-weight: 800;" />
+                            </HBox>
+                            <PasswordField fx:id="passwordField" promptText="Enter Password" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="320"/>
+
+                            <HBox alignment="CENTER_RIGHT" spacing="2" GridPane.rowIndex="2" GridPane.columnIndex="0">
+                                <Label text="Confirm Password" styleClass="form-label" />
+                                <Label text="*" style="-fx-text-fill: #b00020; -fx-font-weight: 800;" />
+                            </HBox>
+                            <PasswordField fx:id="confirmField"  promptText="Confirm Password" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="320"/>
+
+                            <HBox alignment="CENTER_RIGHT" spacing="2" GridPane.rowIndex="3" GridPane.columnIndex="0">
+                                <Label text="First name" styleClass="form-label" />
+                                <Label text="*" style="-fx-text-fill: #b00020; -fx-font-weight: 800;" />
+                            </HBox>
+                            <TextField fx:id="firstNameField" promptText="Enter First Name" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="320"/>
+
+                            <HBox alignment="CENTER_RIGHT" spacing="2" GridPane.rowIndex="4" GridPane.columnIndex="0">
+                                <Label text="Last name" styleClass="form-label" />
+                                <Label text="*" style="-fx-text-fill: #b00020; -fx-font-weight: 800;" />
+                            </HBox>
+                            <TextField fx:id="lastNameField" promptText="Enter Last Name" GridPane.rowIndex="4" GridPane.columnIndex="1" prefWidth="320"/>
+
+                            <Label text="Email" styleClass="form-label" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                            <TextField fx:id="emailField"    promptText="Enter Email Address"     GridPane.rowIndex="5" GridPane.columnIndex="1" prefWidth="320"/>
+
+                            <HBox alignment="CENTER_RIGHT" spacing="2" GridPane.rowIndex="6" GridPane.columnIndex="0">
+                                <Label text="Phone" styleClass="form-label" />
+                                <Label text="*" style="-fx-text-fill: #b00020; -fx-font-weight: 800;" />
+                            </HBox>
+                            <TextField fx:id="phoneField"    promptText="Enter Phone Number"     GridPane.rowIndex="6" GridPane.columnIndex="1" prefWidth="320"/>
+
+                            <HBox alignment="CENTER_RIGHT" spacing="2" GridPane.rowIndex="7" GridPane.columnIndex="0">
+                                <Label text="Role" styleClass="form-label" />
+                                <Label text="*" style="-fx-text-fill: #b00020; -fx-font-weight: 800;" />
+                            </HBox>
+                            <ComboBox fx:id="roleComboBox" promptText="Select Role" GridPane.rowIndex="7" GridPane.columnIndex="1" prefWidth="320"/>
+
+                            <HBox spacing="12" alignment="CENTER" GridPane.rowIndex="8" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                                <GridPane.margin><Insets top="24" left="100"/></GridPane.margin>
+                                <Button text="Add User" onAction="#onAddUser" styleClass="cta-btn" prefHeight="44" prefWidth="200" />
+                            </HBox>
+                            <HBox spacing="12" alignment="CENTER" GridPane.rowIndex="9" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                                <GridPane.margin><Insets left="100"/></GridPane.margin>
+                                <Button text="Go Back" onAction="#onBackToAdminPanel" styleClass="cta-btn" prefHeight="44" prefWidth="200" />
+                            </HBox>
+
+                            <HBox spacing="12" alignment="CENTER" GridPane.rowIndex="10" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                                <GridPane.margin><Insets left="100"/></GridPane.margin>
+                                <Label fx:id="messageLabel" styleClass="banner-error" visible="false" managed="false" />
+                            </HBox>
+            </children>
+                    </GridPane>
+                </VBox>
+        </VBox>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <BorderPane>
+            <left>
+                <HBox alignment="CENTER_LEFT" spacing="24">
+                    <padding><Insets top="10" bottom="10" left="10"/></padding>
+                    <Label text="v1.0.0" style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 18px;" />
+                    <Label text="Built with JavaFX &amp; Gradle" style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 18px;" />
+                </HBox>
+            </left>
+            <right>
+                <HBox alignment="CENTER_RIGHT">
+                    <padding><Insets top="10" bottom="10" right="10"/></padding>
+                    <Label fx:id="dateTimeLabel" style="-fx-text-fill: black; -fx-font-weight: 700; -fx-font-size: 16px;" />
+                </HBox>
+            </right>
+        </BorderPane>
+    </bottom>
+</BorderPane>

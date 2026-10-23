@@ -1,0 +1,20 @@
+# Runtime account records, uploaded documents, and demo data
+/data/
+# Build and dependency caches
+/build/
+/.gradle/
+/out/
+/dist/
+# Local configuration and IDEs
+/.idea/
+/.vscode/
+*.iml
+.classpath
+.project
+.settings/
+gradle.properties
+# Operating system metadata
+.DS_Store
+Thumbs.db
+# Local publication evidence
+/outputs/

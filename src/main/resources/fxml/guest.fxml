@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:id="root" fx:controller="com.vsas.controllers.GuestController" styleClass="login-root, dark">
+    <top>
+        <BorderPane>
+            <left>
+                <VBox spacing="6">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <padding><Insets top="10" left="10"/></padding>
+                        <Label text="ScrollVault Desktop" styleClass="hero-title" />
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT">
+                        <padding><Insets left="10" bottom="10"/></padding>
+                        <Label fx:id="userDisplayLabel" styleClass="card-title" />
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT">
+                        <padding><Insets left="10" bottom="10"/></padding>
+                        <Label fx:id="userTypeLabel" styleClass="card-title" />
+                    </HBox>
+                </VBox>
+            </left>
+            <right>
+                <HBox />
+            </right>
+        </BorderPane>
+    </top>
+    <center>
+        <StackPane>
+            <Pane styleClass="login-bg" />
+            <Pane fx:id="blobLayer" />
+            <Pane fx:id="particlesLayer" />
+            <VBox alignment="CENTER" spacing="12" StackPane.alignment="CENTER">
+                <Button text="Browse Scrolls" onAction="#onBrowseScrolls" styleClass="cta-btn" prefHeight="44" prefWidth="200" />
+                <Button text="Go Back" onAction="#onGoBack" styleClass="cta-btn" prefHeight="44" prefWidth="200" />
+            </VBox>
+        </StackPane>
+    </center>
+    <bottom>
+        <BorderPane>
+            <left>
+                <HBox alignment="CENTER_LEFT" spacing="24">
+                    <padding><Insets top="10" bottom="10" left="10"/></padding>
+                    <Label text="v1.0.0" style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 18px;" />
+                    <Label text="Built with JavaFX &amp; Gradle" style="-fx-text-fill: black; -fx-font-weight: 800; -fx-font-size: 18px;" />
+                </HBox>
+            </left>
+            <right>
+                <HBox alignment="CENTER_RIGHT">
+                    <padding><Insets top="10" bottom="10" right="10"/></padding>
+                    <Label fx:id="dateTimeLabel" style="-fx-text-fill: black; -fx-font-weight: 700; -fx-font-size: 16px;" />
+                </HBox>
+            </right>
+        </BorderPane>
+    </bottom>
+</BorderPane>

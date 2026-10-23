@@ -1,0 +1,171 @@
+.title {
+  -fx-font-size: 24px;
+  -fx-font-weight: bold;
+}
+
+.message {
+  -fx-text-fill: #b00020;
+}
+/* Prominent in-card error banner */
+.banner-error {
+  -fx-background-color: #ffebee;
+  -fx-text-fill: #b00020;
+  -fx-font-size: 18px;
+  -fx-font-weight: 700;
+  -fx-padding: 10 16;
+  -fx-background-radius: 8;
+}
+
+/* Success banner variant */
+.banner-success {
+  -fx-background-color: #e8f5e9;
+  -fx-text-fill: #2e7d32;
+  -fx-font-size: 18px;
+  -fx-font-weight: 700;
+  -fx-padding: 10 16;
+  -fx-background-radius: 8;
+}
+
+Button {
+  -fx-background-radius: 8;
+}
+
+TextField, PasswordField, TextArea {
+  -fx-background-radius: 6;
+}
+
+ToolBar {
+  -fx-padding: 8;
+}
+
+TableView {
+  -fx-background-color: white;
+  -fx-border-color: #e0e0e0;
+}
+
+/* Immersive login styling */
+.login-root {
+  /* Animated gradient background (blue-cyan-purple) */
+  -fx-background-color: linear-gradient(to bottom right, #00d2ff, #3a7bd5, #6a11cb);
+}
+
+.hero-title {
+  -fx-text-fill: #000000; /* black heading */
+  -fx-font-size: 36px;
+  -fx-font-weight: 800;
+}
+
+.hero-subtitle {
+  -fx-text-fill: rgba(255,255,255,0.85);
+  -fx-font-size: 18px;
+}
+
+.hero-body {
+  -fx-text-fill: rgba(255,255,255,0.8);
+}
+
+.glass-card {
+  -fx-background-color: rgba(255,255,255,0.12);
+  -fx-background-radius: 16;
+  -fx-border-color: rgba(255,255,255,0.25);
+  -fx-border-radius: 16;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 20, 0.2, 0, 10);
+}
+
+.glass-card.square {
+  -fx-background-radius: 8;
+  -fx-border-radius: 8;
+  -fx-background-color: rgba(255,255,255,0.95);
+  -fx-border-color: #000000; /* solid black border */
+  -fx-border-width: 3;       /* thicker for clear visibility */
+}
+
+.card-title {
+  -fx-text-fill: #000000; /* black subheading */
+  -fx-font-size: 20px;
+  -fx-font-weight: 700;
+}
+
+.primary {
+  -fx-background-color: linear-gradient(to right, #3a7bd5, #00d2ff);
+  -fx-text-fill: #ffffff;
+  -fx-font-weight: 700;
+  -fx-background-radius: 24;
+  -fx-padding: 10 18 10 18;
+}
+
+.primary:hover {
+  -fx-background-color: linear-gradient(to right, #4f93e6, #33dcff);
+}
+
+/* Bright green hover for call-to-action buttons on welcome page */
+.cta-btn:hover {
+  -fx-background-color: linear-gradient(to right, #2e7d32, #43a047); /* darker greens */
+}
+
+/* Default CTA button style (moved from inline FXML so hover can override) */
+.cta-btn {
+  -fx-background-color: linear-gradient(to right, #6a11cb, #2575fc);
+  -fx-text-fill: white;
+  -fx-font-size: 18px;
+  -fx-font-weight: 800;
+  -fx-background-radius: 22;
+  -fx-padding: 8 16 8 16;
+  -fx-min-width: 160px;
+}
+
+.glass-card .text-field, .glass-card .password-field {
+  -fx-background-color: #ffffff;
+  -fx-text-fill: #000000;
+  -fx-text-inner-color: #000000;
+  -fx-prompt-text-fill: #666666;
+}
+
+.glass-card .hyperlink { -fx-text-fill: #0a66c2; }
+
+.glass-card .label { -fx-text-fill: #000000; }
+.glass-card .label#error, .glass-card .message { -fx-text-fill: #ffb4a9; }
+
+/* Form labels color for better contrast */
+.form-label { -fx-text-fill: #000000; -fx-font-size: 20px; }
+
+/* Background illustration layer (optional image) */
+.login-bg {
+  -fx-background-color: transparent;
+  -fx-opacity: 0; /* disable background illustration */
+}
+
+/* Theme toggling */
+.dark .glass-card { -fx-background-color: rgba(255,255,255,0.12); }
+.light { -fx-background-color: linear-gradient(to bottom right, #ffffff, #eaeef3); }
+.light .hero-title { -fx-text-fill: #0b1929; }
+.light .hero-subtitle, .light .hero-body { -fx-text-fill: #2c3e50; }
+.light .glass-card { -fx-background-color: rgba(255,255,255,0.85); -fx-border-color: rgba(0,0,0,0.06); }
+.light .primary { -fx-background-color: linear-gradient(to right, #3a7bd5, #00d2ff); }
+
+/* Remove underline on label hover */
+Label:hover { -fx-underline: false; }
+
+/* Tooltips styling */
+.tooltip { -fx-font-size: 12px; }
+
+/* Portfolio edition: readable surfaces and compact desktop controls. */
+.login-root { -fx-background-color: #f4f7fb; -fx-font-family: "System"; }
+.glass-card, .glass-card.square, .dark .glass-card {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #d7e1ec;
+  -fx-border-width: 1;
+  -fx-border-radius: 10;
+  -fx-background-radius: 10;
+  -fx-effect: null;
+}
+.hero-title { -fx-text-fill: #172c43; -fx-font-size: 30px; }
+.card-title { -fx-text-fill: #243d55; -fx-font-size: 18px; }
+.cta-btn { -fx-font-size: 16px; -fx-background-color: #2463a6; -fx-background-radius: 8; }
+.cta-btn:hover { -fx-background-color: #194b82; }
+.glass-card .text-field, .glass-card .password-field {
+  -fx-border-color: #ccd8e6;
+  -fx-border-width: 1;
+  -fx-border-radius: 6;
+  -fx-padding: 6 9;
+}
